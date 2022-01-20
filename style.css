@@ -1,0 +1,78 @@
+/*-----Fonts-----
+
+font-family: 'Lato', sans-serif;*/
+
+
+
+/*-----Universal Styles-----*/
+
+html {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+body{
+    margin: 0rem;
+}
+
+
+
+/*-----Nav Bar-----*/
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul  {
+    position: fixed;
+    margin: 0rem 10vw;
+}
+
+nav li  {
+    display: inline-flex;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    background-color: lightcyan;
+    border-radius: 0.5rem;
+}
+
+
+
+/*-----Home Page-----*/
+
+#home-page  {
+    display: grid;
+    width: 70vw;
+    height: 100vh;
+    grid-template: repeat(4, 1fr) / 2fr 1fr;
+    grid-template-areas:    "name img"
+                            "title img"
+                            "phar img"
+                            "logos logos";
+    align-items: center;
+    justify-items: center;
+    background-color: lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home-page h1   {
+    grid-area:  name;
+}
+
+#home-page h2   {
+    grid-area:  title;
+}
+
+#home-page p    {
+    grid-area: phar;
+    margin: 1rem;
+}
+
+#profile-pic    {
+    grid-area: img;
+    height: 100%;
+    max-height: fit-content;
+    overflow: hidden;
+}

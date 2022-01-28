@@ -20,6 +20,15 @@ body    {
     margin-right: auto;
 }
 
+#background-img {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.1;
+    object-fit: cover;
+}
+
 
 
 /*-----Nav Bar-----*/
@@ -32,7 +41,7 @@ nav {
 }
 
 nav a {
-    padding: 0.5rem;
+    padding: 1rem;
     margin-left: 1rem;
     text-decoration: none;
     color: white;
@@ -40,22 +49,27 @@ nav a {
     box-shadow: 0.5rem 0.5rem 5px grey;
 }
 
+nav img   {
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+
 
 
 /*-----Grid-----*/
 
-#title   {
+.title   {
     grid-area:  title;
-    margin-left: 20%;
+    margin-left: 5vw;
 }
 
-#info    {
+.info    {
     grid-area: phar;
-    margin-left: 20%;
+    margin-left: 5vw;
     margin-right: 10%;
 }
 
-#pic    {
+.pic    {
     grid-area: img;
     display: flex;
     width: 100%;
@@ -65,7 +79,7 @@ nav a {
     box-shadow: 1rem 1rem 5px grey;
 }
 
-#logos  {
+.logos  {
     grid-area: logos;
     display: flex;
     width: 100%;
@@ -95,7 +109,7 @@ footer  {
                             "footer footer";
 }
 
-#logos  img {
+.logos  img {
     margin: 0rem 1rem;
     opacity: 0.8;
 }
@@ -109,12 +123,61 @@ footer  {
 /*-----Projects Page-----*/
 
 #projects-page  {
-    grid-template: 2fr 3fr 3fr 2fr 0.3fr / 2fr 1fr;
-    grid-template-areas:    "empty img"
-                            "title img"
-                            "phar img"
-                            "logos logos"
+    grid-template: 2fr 3fr 3fr 3fr 0.3fr / 1fr 2fr;
+    grid-template-areas:    "title title"
+                            "preview-1 description-1"
+                            "preview-2 description-2"
+                            "preview-3 description-3"
                             "footer footer";
+}
+
+#projects-page .title   {
+    grid-area:  title;
+    margin-left: 5vw;
+    align-self: end;
+}
+
+#projects-page h3   {
+    margin-bottom: 0rem;
+}
+
+#projects-page img  {
+    width: 80%;
+    border-radius: 0.5rem;
+    border-style: solid;
+}
+
+#preview-1   {
+    grid-area: preview-1;
+    display: flex;
+    justify-content: center;
+}
+
+#description-1  {
+    grid-area: description-1;
+    margin: 1rem;
+}
+
+#preview-2  {
+    grid-area: preview-2;
+    display: flex;
+    justify-content: center;
+}
+
+#description-2  {
+    grid-area: description-2;
+    margin: 1rem;
+}
+
+#preview-3   {
+    grid-area: preview-3;
+    display: flex;
+    justify-content: center;
+}
+
+#description-3  {
+    grid-area: description-3;
+    margin: 1rem;
 }
 
 
@@ -130,14 +193,14 @@ footer  {
                             "footer footer";
 }
 
-#info a    {
-    display: flex;
+.info a    {
+    display: inline-flex;
     margin-bottom: 1rem;
     font-size: 1.3rem;
     text-decoration: none;
 }
 
-#info img    {
+.info img    {
     width: 2rem;
     margin-right: 1rem;
 }

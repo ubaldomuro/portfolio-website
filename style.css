@@ -29,6 +29,16 @@ body    {
     object-fit: cover;
 }
 
+@media only screen and (max-height: 800px)  {
+    .general    {
+        height: 100%;
+    }
+
+    #background-img {
+        position:fixed;
+    }
+}
+
 
 
 /*-----Nav Bar-----*/
@@ -37,7 +47,6 @@ nav {
     display: flex;
     position: fixed;
     margin: 0rem 10vw;
-    justify-content: flex-start;
 }
 
 nav a {
@@ -46,7 +55,7 @@ nav a {
     text-decoration: none;
     color: white;
     background-color: black;
-    box-shadow: 0.5rem 0.5rem 5px grey;
+    box-shadow: 0.5rem 0.5rem 5px rgba(0, 0, 0, 0.7);
 }
 
 nav img   {
@@ -76,7 +85,7 @@ nav img   {
     height: 100%;
     overflow: hidden;
     justify-content: center;
-    box-shadow: 1rem 1rem 5px grey;
+    box-shadow: 1rem 1rem 5px rgba(0, 0, 0, 0.7);
 }
 
 .logos  {
@@ -95,6 +104,12 @@ footer  {
     flex-flow: column;
     font-size: 0.7rem;
 }
+
+/*@media only screen and (max-height: 800px)  {
+    .pic    {
+        
+    }
+}*/
 
 
 
@@ -142,15 +157,33 @@ footer  {
 }
 
 #projects-page img  {
-    width: 80%;
-    border-radius: 0.5rem;
+    width: 100%;
+    flex-grow: 1;
+    border-width: 0.2rem;
     border-style: solid;
+    border-color: black;
+    box-shadow: 0.5rem 0.5rem 5px rgba(0, 0, 0, 0.7);
+}
+
+#projects-page a    {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.preview    {
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+    overflow-x: auto
+}
+
+.preview:hover  {
+    padding: 5%;
+    z-index: 1;
 }
 
 #preview-1   {
     grid-area: preview-1;
-    display: flex;
-    justify-content: center;
 }
 
 #description-1  {
@@ -160,8 +193,6 @@ footer  {
 
 #preview-2  {
     grid-area: preview-2;
-    display: flex;
-    justify-content: center;
 }
 
 #description-2  {
@@ -171,8 +202,6 @@ footer  {
 
 #preview-3   {
     grid-area: preview-3;
-    display: flex;
-    justify-content: center;
 }
 
 #description-3  {

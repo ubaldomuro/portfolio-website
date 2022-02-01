@@ -8,16 +8,21 @@ html    {
 
 body    {
     margin: 0rem;
+    min-height: 500px;
+    height: auto !important;
+    height: 500px;
 }
 
-.general    {
+.general,
+#projects-page    {
     display: grid;
     width: 70vw;
     height: 100vh;
-    align-items: center;
-    background-color: lightgrey;
+    min-height: 600px;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 #background-img {
@@ -29,8 +34,8 @@ body    {
     object-fit: cover;
 }
 
-@media only screen and (max-height: 800px)  {
-    .general    {
+@media only screen and (max-height: 800px)  { /*to fix some sizing on desktop mode*/
+    #projects-page    {
         height: 100%;
     }
 
@@ -39,6 +44,28 @@ body    {
     }
 }
 
+@media only screen and (max-width: 1000px)   { /*to fix some sizing on desktop mode*/
+    .general,
+    #projects-page    {
+        width: 90vw;
+    }
+}
+
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi)   {
+    .general,
+    #projects-page    {
+        width: 90vw;
+    }
+}
+
+/*tablet mode landscape*/
+@media only screen and (min-resolution: 190dpi) and (orientation: landscape)   {
+    .general,
+    #projects-page    {
+        width: 70vw;
+    }
+}
 
 
 /*-----Nav Bar-----*/
@@ -47,20 +74,63 @@ nav {
     display: flex;
     position: fixed;
     margin: 0rem 10vw;
+    z-index: 2;
 }
 
 nav a {
     padding: 1rem;
-    margin-left: 1rem;
+    margin: 0 0.5rem;
     text-decoration: none;
     color: white;
-    background-color: black;
+    background-color: grey;
     box-shadow: 0.5rem 0.5rem 5px rgba(0, 0, 0, 0.7);
+    transition: background-color 0.5s;
+}
+
+nav a:hover {
+    color: black;
+    background-color: white;
 }
 
 nav img   {
     height: 1rem;
     margin-right: 0.5rem;
+}
+
+#casa-black,
+#tabla-black,
+#telefono-black {
+    display: none;
+}
+
+a[href="index.html"]:hover #casa-white,
+a[href="projects.html"]:hover #tabla-white,
+a[href="contact.html"]:hover #telefono-white {
+    display: none;
+}
+
+a[href="index.html"]:hover #casa-black,
+a[href="projects.html"]:hover #tabla-black,
+a[href="contact.html"]:hover #telefono-black  {
+    display: inline-flex;
+}
+
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi)   {
+    nav {
+        position: fixed;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    nav a   {
+        font-size: 1.2rem;
+    }
+
+    nav img   {
+        height: 1.2rem;
+    }
 }
 
 
@@ -88,6 +158,11 @@ nav img   {
     box-shadow: 1rem 1rem 5px rgba(0, 0, 0, 0.7);
 }
 
+.pic img    {
+    width: 100%;
+    object-fit: cover;
+}
+
 .logos  {
     grid-area: logos;
     display: flex;
@@ -105,11 +180,25 @@ footer  {
     font-size: 0.7rem;
 }
 
-/*@media only screen and (max-height: 800px)  {
-    .pic    {
-        
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi)   {
+    .title  {
+        justify-self: end;
+        width: 70%;
+        margin-right: 0.5rem;
     }
-}*/
+
+    .pic    {
+        width: 70%;
+        height: 100%;
+        margin-left: 0.5rem;
+    }
+
+    .pic img    {
+        width: 100%;
+        align-self: flex-start;
+    }
+}
 
 
 
@@ -131,6 +220,33 @@ footer  {
 
 #home-page p  {
     font-size: 1.1rem;
+}
+
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi)   {
+    #home-page  {
+        grid-template: 1fr 2fr 3fr 1.5fr 0.3fr / 1fr 1fr;
+        grid-template-areas:    "empty empty"
+                                "title img"
+                                "phar phar"
+                                "logos logos"
+                                "footer footer";
+    }
+
+    #home-page h1  {
+        font-size: 3rem;
+        text-align: end;
+    }
+
+    #home-page h2  {
+        font-size: 2rem;
+        text-align: end;
+    }
+
+    #home-page p  {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
 
 
@@ -174,7 +290,8 @@ footer  {
     display: flex;
     justify-content: center;
     padding: 10%;
-    overflow-x: auto
+    overflow-x: auto;
+    transition: padding .5s;
 }
 
 .preview:hover  {
@@ -209,6 +326,52 @@ footer  {
     margin: 1rem;
 }
 
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi) {
+    #projects-page  {
+        grid-template: 2fr 3fr 3fr 3fr 0.3fr / 1fr 1fr;
+        grid-template-areas:    "title title"
+                                "preview-1 description-1"
+                                "preview-2 description-2"
+                                "preview-3 description-3"
+                                "footer footer";
+    }
+
+    #projects-page .title  {
+        justify-self: start;
+    }
+
+    #projects-page h1   {
+        font-size: 3rem;
+    }
+
+    #projects-page h3,
+    #projects-page p   {
+        font-size: 1.5rem;
+    }
+}
+
+/*tablet mode landscape*/
+@media only screen and (min-resolution: 190dpi) and (orientation: landscape)   {
+    #projects-page  {
+        grid-template: 1fr 3fr 3fr 3fr 0.3fr / 1fr 1fr;
+        grid-template-areas:    "title title"
+                                "preview-1 description-1"
+                                "preview-2 description-2"
+                                "preview-3 description-3"
+                                "footer footer";
+    }
+
+    #projects-page .title  {
+        display: none;
+    }
+
+    #projects-page h3,
+    #projects-page p   {
+        font-size: 1.3rem;
+    }
+}
+
 
 
 /*-----Contact Page-----*/
@@ -232,4 +395,27 @@ footer  {
 .info img    {
     width: 2rem;
     margin-right: 1rem;
+}
+
+/*tablet mode*/
+@media only screen and (min-resolution: 190dpi)   {
+    #contact-page {
+        grid-template: 1fr 2fr 3fr 0.3fr / 1fr 1fr;
+        grid-template-areas:    "empty empty"
+                                "title img"
+                                "phar phar"
+                                "footer footer";
+    }
+
+    #contact-page h1  {
+        font-size: 3rem;
+        text-align: end;
+    }
+
+    #contact-page h2,
+    .info,
+    .info a   {
+        font-size: 2rem;
+        text-align: center;
+    }
 }

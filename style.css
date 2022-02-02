@@ -1,5 +1,5 @@
 
-/*-----Universal Styles-----*/
+/*------------------------------Universal Styles------------------------------*/
 
 html    {
     font-family: 'Lato', sans-serif;
@@ -34,9 +34,9 @@ body    {
     object-fit: cover;
 }
 
-@media only screen and (max-height: 800px)  { /*to fix some sizing on desktop mode*/
+@media only screen and (max-height: 800px), only screen and (max-width: 800px)  { /*to fix some sizing on desktop mode*/
     #projects-page    {
-        height: 100%;
+        height: 100vh;
     }
 
     #background-img {
@@ -53,6 +53,10 @@ body    {
 
 /*tablet mode*/
 @media only screen and (min-resolution: 190dpi)   {
+    html    {
+        font-size: 18px;
+    }
+
     .general,
     #projects-page    {
         width: 90vw;
@@ -67,8 +71,52 @@ body    {
     }
 }
 
+/*cellphone mode*/
+@media only screen and (min-resolution: 280dpi)   {
+    html    {
+        font-size: 32px;
+    }
 
-/*-----Nav Bar-----*/
+    .general,
+    #projects-page    {
+        width: 100vw;
+    }
+
+    #background-img {
+        position: fixed;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/*cellphone mode landscape*/
+@media only screen and (min-resolution: 280dpi) and (orientation: landscape)   {
+    html    {
+        font-size: 16px;
+    }
+
+    body    {
+        min-height: 400px;
+    }
+
+    .general,
+    #projects-page    {
+        width: 90vw;
+    }
+
+    .general    {
+        min-height: 400px;
+    }
+
+    #projects-page    {
+        height: 100%;
+        min-height: 600px;
+    }
+}
+
+
+
+/*------------------------------Nav Bar------------------------------*/
 
 nav {
     display: flex;
@@ -123,19 +171,11 @@ a[href="contact.html"]:hover #telefono-black  {
         margin: 0 auto;
         justify-content: center;
     }
-
-    nav a   {
-        font-size: 1.2rem;
-    }
-
-    nav img   {
-        height: 1.2rem;
-    }
 }
 
 
 
-/*-----Grid-----*/
+/*------------------------------Grid------------------------------*/
 
 .title   {
     grid-area:  title;
@@ -195,14 +235,52 @@ footer  {
     }
 
     .pic img    {
-        width: 100%;
         align-self: flex-start;
+    }
+}
+
+/*cellphone mode*/
+@media only screen and (min-resolution: 280dpi)   {
+    .pic img    {
+        height: 100%;
+        align-self: flex-start;
+    }
+
+    .info    {
+        margin: auto 1rem;
+    }
+}
+
+/*cellphone mode landscape*/
+@media only screen and (min-resolution: 280dpi) and (orientation: landscape)   {
+    #home-page .title   {
+        margin-left: 2rem;
+        justify-self: start;
+    }
+    
+    .pic    {
+        width: 100%;
+        height: 60%;
+        justify-content: center;
+    }
+    
+    .pic img    {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .info    {
+        margin: auto 0.5rem;
+    }
+
+    .logos  {
+        height: 80%;
     }
 }
 
 
 
-/*-----Home Page-----*/
+/*------------------------------Home Page------------------------------*/
 
 #home-page  {
     grid-template: 2fr 3fr 3fr 2fr 0.3fr / 2fr 1fr;
@@ -223,7 +301,7 @@ footer  {
 }
 
 /*tablet mode*/
-@media only screen and (min-resolution: 190dpi)   {
+@media only screen and (min-resolution: 190dpi), only screen and (max-width: 800px)   {
     #home-page  {
         grid-template: 1fr 2fr 3fr 1.5fr 0.3fr / 1fr 1fr;
         grid-template-areas:    "empty empty"
@@ -234,24 +312,49 @@ footer  {
     }
 
     #home-page h1  {
-        font-size: 3rem;
         text-align: end;
     }
 
     #home-page h2  {
-        font-size: 2rem;
         text-align: end;
     }
 
     #home-page p  {
-        font-size: 1.5rem;
         text-align: center;
+    }
+}
+
+/*cellphone mode landscape*/
+@media only screen and (min-resolution: 280dpi) and (orientation: landscape)   {
+    #home-page  {
+        grid-template: 3fr 0.5fr 0.3fr / 1fr 1fr 2fr;
+        grid-template-areas:    "img title phar"
+                                "logos logos logos"
+                                "footer footer footer";
+    }
+
+    .logos  img {
+        height: 3rem;
+        margin: 0rem 1rem;
+        opacity: 0.8;
+    }
+
+    #home-page h1  {
+        text-align: start;
+    }
+
+    #home-page h2  {
+        text-align: start;
+    }
+
+    #home-page p  {
+        text-align: end;
     }
 }
 
 
 
-/*-----Projects Page-----*/
+/*------------------------------Projects Page------------------------------*/
 
 #projects-page  {
     grid-template: 2fr 3fr 3fr 3fr 0.3fr / 1fr 2fr;
@@ -270,6 +373,11 @@ footer  {
 
 #projects-page h3   {
     margin-bottom: 0rem;
+}
+
+#projects-page .disclaimer   {
+    display: none;
+    color: red;
 }
 
 #projects-page img  {
@@ -291,7 +399,7 @@ footer  {
     justify-content: center;
     padding: 10%;
     overflow-x: auto;
-    transition: padding .5s;
+    transition: padding .2s;
 }
 
 .preview:hover  {
@@ -326,6 +434,21 @@ footer  {
     margin: 1rem;
 }
 
+@media only screen and (max-height: 800px)  { /*to fix some sizing on desktop mode*/
+    #projects-page  {
+        grid-template: 2fr 3fr 3fr 3fr 0.3fr / 1fr 2fr;
+        grid-template-areas:    "empty title"
+                                "preview-1 description-1"
+                                "preview-2 description-2"
+                                "preview-3 description-3"
+                                "footer footer";
+    }
+
+    #projects-page .title   {
+        margin-left: 1rem;
+    }
+}
+
 /*tablet mode*/
 @media only screen and (min-resolution: 190dpi) {
     #projects-page  {
@@ -340,15 +463,6 @@ footer  {
     #projects-page .title  {
         justify-self: start;
     }
-
-    #projects-page h1   {
-        font-size: 3rem;
-    }
-
-    #projects-page h3,
-    #projects-page p   {
-        font-size: 1.5rem;
-    }
 }
 
 /*tablet mode landscape*/
@@ -362,19 +476,83 @@ footer  {
                                 "footer footer";
     }
 
-    #projects-page .title  {
-        display: none;
+    #projects-page .title h1    {
+        margin-top: 4rem;
+        margin-bottom: 0rem;
     }
 
-    #projects-page h3,
-    #projects-page p   {
-        font-size: 1.3rem;
+    #projects-page .title h3    {
+        display: none;
+    }
+}
+
+/*cellphone mode*/
+@media only screen and (min-resolution: 280dpi) and (orientation: portrait), only screen and (max-width: 800px)   {
+    #projects-page  {
+        grid-template: 2fr 1fr 2fr 1fr 2fr 1fr 2fr 0.3fr / 1fr;
+        grid-template-areas:    "title"
+                                "description-1"
+                                "preview-1"
+                                "description-2"
+                                "preview-2"
+                                "description-3"
+                                "preview-3"
+                                "footer";
+        height: 100%;
+    }
+
+    #projects-page .title   {
+        margin: 1rem;
+        width: 90%;
+        align-self: end;
+    }
+
+    #projects-page .disclaimer   {
+        display: flex;
+    }
+
+    #projects-page h1   {
+        margin-bottom: 0;
+    }
+
+    #description-1,
+    #description-2,
+    #description-3  {
+        align-self: flex-end;
+        margin: 0rem 1rem;
+    }    
+
+    #projects-page .preview    {
+        padding: 1rem;
+        justify-self: center;
+    }
+}
+
+/*cellphone mode landscape*/
+@media only screen and (min-resolution: 280dpi) and (orientation: landscape)   {
+    #projects-page  {
+        grid-template: 1fr 1.5fr 1.5fr 1.5fr 0.3fr / 1fr 1fr;
+        grid-template-areas:    "title title"
+                                "preview-1 description-1"
+                                "preview-2 description-2"
+                                "preview-3 description-3"
+                                "footer footer";
+    }
+    
+    #projects-page .title   {
+        margin: 0rem 1rem;
+        width: 100%;
+    }
+    
+    #projects-page .title h3,
+    #projects-page .disclaimer   {
+        display: flex;
     }
 }
 
 
 
-/*-----Contact Page-----*/
+/*------------------------------Contact Page------------------------------*/
 
 #contact-page   {
     grid-template: 2fr 3fr 3fr 2fr 0.3fr / 2fr 1fr;
@@ -398,7 +576,7 @@ footer  {
 }
 
 /*tablet mode*/
-@media only screen and (min-resolution: 190dpi)   {
+@media only screen and (min-resolution: 190dpi), only screen and (max-width: 800px)   {
     #contact-page {
         grid-template: 1fr 2fr 3fr 0.3fr / 1fr 1fr;
         grid-template-areas:    "empty empty"
@@ -408,14 +586,26 @@ footer  {
     }
 
     #contact-page h1  {
-        font-size: 3rem;
         text-align: end;
     }
 
     #contact-page h2,
-    .info,
-    .info a   {
-        font-size: 2rem;
+    #contact-page .info,
+    #contact-page .info a   {
         text-align: center;
+    }
+}
+
+/*cellphone mode landscape*/
+@media only screen and (min-resolution: 280dpi) and (orientation: landscape)   {
+    #contact-page  {
+        grid-template: 4fr 0.3fr / 1fr;
+        grid-template-areas:    "phar"
+                                "footer";
+    }
+
+    #contact-page .title,
+    #contact-page .pic  {
+        display: none;
     }
 }

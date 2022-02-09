@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Projects Ubaldo</title>
+        <title>Ubaldo's Portfolio</title>
         <script type="text/javascript" src="script.js"></script>
         <link href="style.css" rel="stylesheet">
         <link rel="shortcut icon" href="images/iconos/icon.jpg" type="image/x-icon">
@@ -9,47 +9,68 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"> 
     </head>
+    
     <body>
-        <nav>
-            <a href="index.html"><img id="casa-white" src="images/iconos/Casa.png"><img id="casa-black" src="images/iconos/CasaN.png">Home</a>
-            <a href="projects.html"><img id="tabla-white" src="images/iconos/Tabla.png"><img id="tabla-black" src="images/iconos/TablaN.png">Projects</a>
-            <a href="contact.html"><img id="telefono-white" src="images/iconos/Telefono.png"><img id="telefono-black" src="images/iconos/TelefonoN.png">Contact</a>
-        </nav>
-        
-        <main>
-            <img src="images/bgpic.png" id="background-img">
-            <div id="projects-page">
-                <div class="title">
-                    <h1>Projects</h1>
-                    <h3>This are some of the projects I have done during my front-end course.</h3>
-                    <p class="disclaimer">Disclaimer: The Peugeot 208 enthusiastic site and the Sea Shanties Club are not optimized for mobile devices.</p>
-                </div>
-                <div id="preview-1" class="preview">
-                    <a href="*" target="_blank"><img src="images/peugeot-preview.png"></a>
-                </div>
-                <div id="description-1">
-                    <h3>Peugeot 208 enthusiastic site</h3>
-                    <p>This is a enthusiastic webpage about a car, it contains a flashy homepage an a gallery, with some info about the drivers at the bottom.</p>
-                </div>
-                <div id="preview-2" class="preview">
-                    <a href="*" target="_blank"><img src="images/seashaties-preview.png"></a>
-                </div>
-                <div id="description-2">
-                    <h3>Sea Shanties Club</h3>
-                    <p>The Sea Shanties Club page is where you can know more about this group, see some photos of the meetings and the greatest songs of the week.</p>
-                </div>
-                <div id="preview-3" class="preview">
-                    <a href="index.html"><img src="images/portfolio-preview.png"></a>
-                </div>
-                <div id="description-3">
-                    <h3>This Portfolio Page</h3>
-                    <p>This is the page you are currently seeing, I hope this helps to get an idea of what you can expect about working with me.</p>
-                </div>
+        <img id="background-img" src="images/bgpic.png">
+        <div class="whole-page-container">
+            <div  class="main-grid-container">
+                <header>
+                    <h1>Ubaldo Muro</h1>
+                    <h2>Rookie but motivated</h2>
+                </header>
+                <a href="index.html" class="picture">
+                    <img src="images/profile-pic.jpg" alt="Ubaldo">
+                </a>
+                <main>
+                    <div id="projects-page">
+                        <div class="grid-header">
+                            <h1>Projects</h1>
+                        </div>
+                        <div class="grid-header">
+                            <h3>This are some of the projects I have done during my front-end course.</h3>
+                            <p class="disclaimer">Disclaimer: The Peugeot 208 enthusiastic site and the Sea Shanties Club are not optimized for mobile devices.</p>
+                        </div>
+                        <div class="grid-element">
+                            <h3>Car Enthusiastic Site</h3>
+                            <p>This is a enthusiastic webpage about a car, it contains a flashy homepage an a gallery, with some info about the drivers at the bottom.</p>
+                        </div>
+                        <div class="grid-element">
+                            <a href="#" target="_blank"><img src="images/peugeot-preview.png"></a>
+                        </div>
+                        <div class="grid-element">
+                            <h3>Sea Shanties Club</h3>
+                            <p>The Sea Shanties Club page is where you can know more about this group, see some photos of the meetings and the greatest songs of the week.</p>
+                        </div>
+                        <div class="grid-element">
+                            <a href="#" target="_blank"><img src="images/seashaties-preview.png"></a>
+                        </div>
+                        <div class="grid-element">
+                            <h3>This Portfolio Page</h3>
+                            <p>The page you are currently seeing, I hope this helps to get an idea of what you can expect about working with me.</p>
+                        </div>
+                        <div class="grid-element">
+                            <a href="index.html"><img src="images/portfolio-preview.png"></a>
+                        </div>
+                    </div>
+                </main>
                 <footer>
-                    <span>Ubaldo Muro</span>
-                    <span>2022</span>
+                    <div class="logos">
+                        <img src="images/logos/html.png" alt="html logo">
+                        <img src="images/logos/css.png" alt="css logo">
+                        <img src="images/logos/js.png" alt="js logo">
+                        <img src="images/logos/GitHub.png" alt="github logo">
+                    </div>
+                    <div class="contact">
+                        <a href="mailto:ubaldo.muro@gmail.com?subject=We are interested in working with you"><img src="images/logos/gmail-logo.png">ubaldo.muro@gmail.com</a>
+                        <a href="https://wa.me/523314948523" target="_blank"><img src="images/logos/whatsapp-logo.png">+52-331-494-8523</a>
+                    </div>
+                    <div class="author">
+                        <span>Ubaldo Muro </span>
+                        <br>
+                        <span>2022</span>
+                    </div>
                 </footer>
             </div>
-        </main>
+        </div>
     </body>
 </html>

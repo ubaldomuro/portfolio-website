@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
     <head>
-        <title>Portfolio Ubaldo</title>
+        <title>Ubaldo's Portfolio</title>
         <script type="text/javascript" src="script.js"></script>
         <link href="style.css" rel="stylesheet">
         <link rel="shortcut icon" href="images/iconos/icon.jpg" type="image/x-icon">
@@ -12,20 +11,17 @@
     </head>
 
     <body>
-        <nav>
-            <a href="index.html"><img id="casa-white" src="images/iconos/Casa.png"><img id="casa-black" src="images/iconos/CasaN.png">Home</a>
-            <a href="projects.html"><img id="tabla-white" src="images/iconos/Tabla.png"><img id="tabla-black" src="images/iconos/TablaN.png">Projects</a>
-            <a href="contact.html"><img id="telefono-white" src="images/iconos/Telefono.png"><img id="telefono-black" src="images/iconos/TelefonoN.png">Contact</a>
-        </nav>
-
-        <main>
-            <img src="images/bgpic.png" id="background-img">
-            <div id="home-page" class="general">
-                <div class="title">
+        <img id="background-img" src="images/bgpic.png">
+        <div class="whole-page-container">
+            <div  class="main-grid-container">
+                <header>
                     <h1>Ubaldo Muro</h1>
                     <h2>Rookie but motivated</h2>
-                </div>
-                <div class="info">
+                </header>
+                <a href="index.html" class="picture">
+                    <img src="images/profile-pic.jpg" alt="Ubaldo">
+                </a>
+                <main>
                     <p>Welcome to my portfolio! here Ubaldo, a 
                         new web developer still learning and improving every day,
                         I would love to bring my knowledge and enthusiasm to your 
@@ -34,22 +30,26 @@
                         in your work enviorment consider contacting me. Thank you for stopping by
                         and best of luck.
                     </p>
-                </div>
-                <div class="pic">
-                    <img src="images/profile-pic.jpg" alt="Ubaldo">
-                </div>
-                <div class="logos">
-                    <img src="images/logos/html.png" alt="html logo">
-                    <img src="images/logos/css.png" alt="css logo">
-                    <img src="images/logos/js.png" alt="js logo">
-                    <img src="images/logos/GitHub.png" alt="github logo">
-                </div>
+                    <a id="link-to-projects" href="projects.html">Previous Projects!</a>
+                </main>
                 <footer>
-                    <span>Ubaldo Muro</span>
-                    <span>2022</span>
+                    <div class="contact">
+                        <a href="mailto:ubaldo.muro@gmail.com?subject=We are interested in working with you"><img src="images/logos/gmail-logo.png">ubaldo.muro@gmail.com</a>
+                        <a href="https://wa.me/523314948523" target="_blank"><img src="images/logos/whatsapp-logo.png">+52-331-494-8523</a>
+                    </div>
+                    <div class="logos">
+                        <img src="images/logos/html.png" alt="html logo">
+                        <img src="images/logos/css.png" alt="css logo">
+                        <img src="images/logos/js.png" alt="js logo">
+                        <img src="images/logos/GitHub.png" alt="github logo">
+                    </div>
+                    <div class="author">
+                        <span>Ubaldo Muro </span>
+                        <br>
+                        <span>2022</span>
+                    </div>
                 </footer>
             </div>
-        </main>
+        </div>
     </body>
-
 </html>

@@ -101,6 +101,7 @@ main    {
 main p   {
     font-size: 1.2rem;
     margin: 3vh;
+    text-align: center;
 }
 
 main #link-to-projects {
@@ -118,6 +119,7 @@ main #link-to-projects:hover   {text-decoration-color: darkblue;}
 
 
 /*------------------------------Grid Projects------------------------------*/
+
 #projects-page {
     display: grid;
     height: 100%;
@@ -155,6 +157,16 @@ main #link-to-projects:hover   {text-decoration-color: darkblue;}
 }
 
 #projects-page .grid-element:hover img    {opacity: 1;}
+
+
+
+/*------------------------------Game------------------------------*/
+
+main #myCanvas   {
+    display: block;
+    margin-top: 1rem;
+    background-color: white;
+}
 
 
 

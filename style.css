@@ -162,11 +162,27 @@ main #link-to-projects:hover   {text-decoration-color: darkblue;}
 
 /*------------------------------Game------------------------------*/
 
-main #myCanvas   {
-    display: block;
+main #game   {
+    display: none;
     margin-top: 1rem;
-    background-color: white;
+    border-width: 5px;
+    outline: darkblue 3px solid;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1rem;
 }
+
+main #start {
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: darkblue;
+    border: none;
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    transition: text-decoration-color 0.4s;
+    border-radius: 1rem;
+}
+
+main #start:hover   {text-decoration-color: darkblue;}
 
 
 

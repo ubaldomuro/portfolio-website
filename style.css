@@ -247,9 +247,11 @@ footer .author  {
 
 @media only screen and (orientation:portrait) and (min-resolution: 190dpi)   {
     header  {align-items: flex-start;}
-    main   {font-size: 2vh;}
-    main p  {font-size: 1.5vh;}
+    main   {font-size: 2.2vh;}
+    main p  {font-size: 2.2vh;}
+    #projects-page .grid-header h3  {text-align: center;}
     #projects-page .grid-element img    {width:unset;}
+    main #start {display: none;}
     footer .logos img  {height: 5vh;}
     footer  {font-size: 1.5vh;}
     footer .contact a    {font-size: 2.5vh; margin: 1vh 0;}
@@ -261,4 +263,5 @@ footer .author  {
     main    {font-size: 2vw;}
     main p  {font-size: 1.8vw; margin: 5vw;}
     main #link-to-projects {margin-bottom: 5vw;}
+    main #start {display: none;}
 }
